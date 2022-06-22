@@ -47,7 +47,7 @@ public class Menu {
 					System.out.println("Digite o valor do preço: ");
 					produto.setPreco(preco_.nextFloat());
 
-					System.out.println(Inclusao.inserirProduto(produto));
+					System.out.println(ProdutoDao.inserirProduto(produto));
 
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -59,7 +59,7 @@ public class Menu {
 				try {
 					Scanner id_ = new Scanner(System.in);
 					System.out.println("Digite o Id: ");
-					Produto produtoAAtualizar = ConsultarEAlterar.consultarProduto(id_.nextInt());
+					Produto produtoAAtualizar = ProdutoDao.consultarProduto(id_.nextInt());
 
 					System.out.println("Deseja alterar esse produto? " + produtoAAtualizar.getNome());
 					Scanner produto = new Scanner(System.in);
@@ -81,25 +81,25 @@ public class Menu {
 								Scanner recebaNome = new Scanner(System.in);
 								System.out.println("Digite o nome que deseja alterar: ");
 								String opcaoNome = recebaNome.nextLine();
-								ConsultarEAlterar.atualizarPorNome(produtoAAtualizar.getId(), opcaoNome);
+								ProdutoDao.atualizarPorNome(produtoAAtualizar.getId(), opcaoNome);
 							}
 							if (opcao == 2) {
 								Scanner recebaDescricao = new Scanner(System.in);
 								System.out.println("Digite a descricao que deseja alterar: ");
 								String opcaoDescricao = recebaDescricao.nextLine();
-								ConsultarEAlterar.atualizarPorDescricao(produtoAAtualizar.getId(), opcaoDescricao);
+								ProdutoDao.atualizarPorDescricao(produtoAAtualizar.getId(), opcaoDescricao);
 							}
 							if (opcao == 3) {
 								Scanner recebaDesconto = new Scanner(System.in);
 								System.out.println("Digite o valor do desconto que deseja alterar: ");
 								float opcaoDesconto = recebaDesconto.nextFloat();
-								ConsultarEAlterar.atualizarPorDesconto(produtoAAtualizar.getId(), opcaoDesconto);
+								ProdutoDao.atualizarPorDesconto(produtoAAtualizar.getId(), opcaoDesconto);
 							}
 							if (opcao == 4) {
 								Scanner recebaPreco = new Scanner(System.in);
-								System.out.println("Digite o valor do desconto que deseja alterar: ");
+								System.out.println("Digite o valor do preço que deseja alterar: ");
 								float opcaoPreco = recebaPreco.nextFloat();
-								ConsultarEAlterar.atualizarPorPreco(produtoAAtualizar.getId(), opcaoPreco);
+								ProdutoDao.atualizarPorPreco(produtoAAtualizar.getId(), opcaoPreco);
 							}
 
 							if (opcao == 5) {
@@ -123,7 +123,7 @@ public class Menu {
 				try {
 				Scanner id_ = new Scanner(System.in);
 				System.out.println("Digite o Id: ");
-				Produto produtoADeletar = ConsultarEAlterar.consultarProduto(id_.nextInt());
+				Produto produtoADeletar = ProdutoDao.consultarProduto(id_.nextInt());
 
 				System.out.println("Deseja excluir esse produto? " + produtoADeletar.getNome());
 				Scanner produto = new Scanner(System.in);
@@ -134,7 +134,7 @@ public class Menu {
 
 				if (entrada3 == 1) {
 
-					Deletar.deletarPorId(produtoADeletar.getId());
+					ProdutoDao.deletarPorId(produtoADeletar.getId());
 					System.out.println("O produto foi deletado!");
 				} }catch (InputMismatchException e) {
 					System.out.println("valor inválido");
@@ -145,7 +145,7 @@ public class Menu {
 			}
 
 			if (entrada == 4) {
-				Listar.listarProdutos();
+				ProdutoDao.listarProdutos();
 			}
 
 		} while (entrada != 5);

@@ -6,51 +6,43 @@ import java.util.List;
 public class Risograma {
 	
 	private String nomeFuncionario;
-	private String neutro;
-	private String chateado = ":(";
-	private String divertido = ":)";
-	private List<String> perguntas;
-		
+	private String mensagem;
+	private String resposta;
 	
-	public String getNeutro() {
-		return neutro;
+	
+	
+	public Risograma(String nomeFuncionario, String mensagem) {
+		this.nomeFuncionario = nomeFuncionario;
+		this.mensagem = mensagem;
 	}
-
-	public String getChateado() {
-		return chateado;
-	}
-
-	public String getDivertido() {
-		return divertido;
-	}
-
+	
+	
 	public String getNomeFuncionario() {
 		return nomeFuncionario;
 	}
-
 	public void setNomeFuncionario(String nomeFuncionario) {
 		this.nomeFuncionario = nomeFuncionario;
 	}
-	
-	public static List<String> getPerguntas() {
-		return getPerguntas();
+	public String getMensagem() {
+		return mensagem;
 	}
-	
-	
-	public void insertPerguntas(String pergunta) {
-		perguntas.add(pergunta);
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
-	
-
-	public void setPerguntas(List<String> pergunta) {
-		this.perguntas = pergunta;
+	public String getResposta() {
+		return resposta;
 	}
-	
-
+	public void setResposta(String resposta) {
+		this.resposta = resposta;
+	}
 }
+	
+	
 
 	
-	
+
+
+
 		
 	
 
